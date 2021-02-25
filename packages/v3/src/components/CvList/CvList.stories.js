@@ -15,7 +15,7 @@ export default {
 };
 
 const template = `<div style="margin-left: 1rem;">
-<template v-if="templateSelector == 'Default'">
+<template v-if="templateSelector == 'Nested'">
   <cv-list v-bind="newArgs">
   <cv-list-item>List item 1
   <cv-list nested>
