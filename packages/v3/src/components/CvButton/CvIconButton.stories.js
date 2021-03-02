@@ -2,9 +2,11 @@ import { action } from '@storybook/addon-actions';
 import { CvIconButton } from './';
 import { buttonKinds, buttonSizes } from './consts.js';
 import {
+  sbCompPrefix,
   storybookControlsFromProps,
   storyParametersObject,
 } from '../../global/storybook-utils';
+import { sbBtnPrefix } from './sbBtnPrefix';
 
 import { props as commonCvButtonProps } from './CvButtonCommon';
 import {
@@ -26,7 +28,7 @@ const icons = {
 };
 
 export default {
-  title: 'Components/CvIconButton',
+  title: `${sbCompPrefix}/${sbBtnPrefix}/CvIconButton`,
   component: CvIconButton,
   argTypes: {
     ...storybookControlsFromProps(commonCvButtonProps),
@@ -42,11 +44,17 @@ export default {
     /**
      * Carbon button kind
      */
-    kind: { control: { type: 'select', options: buttonKinds } },
+    kind: {
+      control: { type: 'select', options: buttonKinds },
+      defaultValue: CvIconButton.props.kind.default,
+    },
     /**
      * Size of the button
      */
-    size: { control: { type: 'select', options: buttonSizes } },
+    size: {
+      control: { type: 'select', options: buttonSizes },
+      defaultValue: CvIconButton.props.size.default,
+    },
   },
 };
 
@@ -63,11 +71,13 @@ const Template = (args, { argTypes }) => {
   };
 };
 
+const defaultArgs = { icon: 'Bee20' };
+
 export const Primary = Template.bind({});
 Primary.args = {
+  ...defaultArgs,
   kind: 'primary',
   label: 'primary',
-  icon: 'Bee20',
 };
 Primary.parameters = storyParametersObject(
   Primary.parameters,
