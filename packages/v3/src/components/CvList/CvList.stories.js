@@ -4,7 +4,7 @@ import {
 } from '../../global/storybook-utils';
 
 export default {
-  title: 'Components/CvList',
+  title: 'Component/CvList',
   component: CvList,
   argTypes: {
     templateSelector: { table: { disable: true }},

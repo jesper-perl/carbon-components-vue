@@ -5,7 +5,7 @@ import {
 } from '../../global/storybook-utils';
 
 export default {
-  title: 'Components/CvLink',
+  title: 'Component/CvLink',
   component: CvLink,
   argTypes: {
     to: { control: { type: 'text' } },
